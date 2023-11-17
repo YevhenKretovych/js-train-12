@@ -336,8 +336,8 @@ function getFilteredDictionarySize(dictionary, filter) {
   // Повертаємо розмір фільтрованого словника, використовуючи властивість size
   let newMap = new Map();
 
-  for (const [key, value] of dictionary) {
-    if (filter) {
+  for (const [key, value] of dictionary.entries()) {
+    if (filter(key, value)) {
       newMap.set(key, value);
     }
   }
